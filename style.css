@@ -1,0 +1,71 @@
+/* Core Page Layout */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2c3e50;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+}
+
+/* Pet Body Setup */
+#pet {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #2196F3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    cursor: grab;
+    transition: transform 0.1s ease;
+    animation: breathe 3s ease-in-out infinite;
+}
+
+#pet:active {
+    cursor: grabbing;
+    animation: none; /* Stops breathing while being dragged */
+}
+
+/* Eyes Container */
+.eye {
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.1s ease;
+}
+
+/* Pupils */
+.pupil {
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.05s linear;
+}
+
+/* Animations */
+@keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+}
+
+.blink {
+    height: 2px !important;
+}
